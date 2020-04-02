@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My OutLook</string>
+    <string name="warning_client_id_redirect_uri_incorrect">Incorrect url</string>
+</resources>
