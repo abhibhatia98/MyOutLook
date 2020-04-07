@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/custom_background"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/data_today_id"
+            android:background="@color/white"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:text="Today"
+            android:paddingLeft="5dp"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/btn_date"
+            android:background="@color/white"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/data_nxt_id"
+            android:background="@color/white"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:paddingLeft="5dp"
+            android:text="ADD TASK"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/btn_add_task"
+            android:background="@color/white"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

@@ -10,7 +10,7 @@
 
     android:background="@drawable/download"
     tools:context=".MainActivity">
-    <!--<EditText
+    <EditText
         android:id="@+id/user_name_id"
         android:layout_width="320dp"
         android:layout_height="60dp"
@@ -22,15 +22,15 @@
         android:hint="Enter Your username" />
 
     <EditText
-    android:id="@+id/email_id"
-    android:layout_width="320dp"
-    android:layout_height="60dp"
-    android:padding="10dp"
-    android:textStyle="bold"
-    android:paddingTop="10dp"
-    android:layout_marginTop="20dp"
-    android:layout_gravity="center"
-    android:hint="Enter your Email" />
+        android:id="@+id/email_id"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:hint="Enter your Email" />
 
     <EditText
         android:id="@+id/password_id"
@@ -54,7 +54,7 @@
         android:layout_marginTop="20dp"
         android:padding="10dp"
         android:text="Login" />
--->
+
 
 
 

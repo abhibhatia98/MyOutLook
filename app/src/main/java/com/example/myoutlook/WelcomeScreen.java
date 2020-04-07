@@ -1,9 +1,12 @@
 package com.example.myoutlook;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -15,6 +18,13 @@ public  class WelcomeScreen extends TutorialActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("welcome","come to welcome Screen");
+
+
+        SharedPreferences sharedPreferences =getSharedPreferences(getPackageName()+".my_pref_file", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("welcomeShow",false);
+        editor.apply();
 
 
         addFragment(new Step.Builder().setTitle("")

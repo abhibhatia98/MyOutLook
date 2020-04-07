@@ -61,12 +61,12 @@ public class MailReader implements Runnable {
                 readOTP.append(temp[65]);
                 readOTP.append(temp[66]);
                 Log.e("mailReader","read OTP IS  "+ readOTP);
-                Log.e("mailReader","class vala OTP is "+MyPasswordAuthenticator.otp);
+                Log.e("mailReader","class vala OTP is "+VerifyCredentials.otp);
                 break;
             }
         }
         String temp = readOTP.toString().trim();
-        if(temp.equals(MyPasswordAuthenticator.otp)){
+        if(temp.equals(VerifyCredentials.otp)){
 
             check = true;
             Log.e("mailReader","done check");

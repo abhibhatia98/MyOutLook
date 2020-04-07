@@ -1,6 +1,5 @@
 package com.example.myoutlook;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -13,14 +12,10 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Objects;
-
-public class OTPActivity extends AppCompatActivity {
+public class PINActivity extends AppCompatActivity {
     private EditText firstDigitpinEdt, secondDigitpinEdt, thirdDigitpinEdt, fourthDigitpinEdt;
     String truepin;
     int test = 1;
@@ -192,23 +187,22 @@ public class OTPActivity extends AppCompatActivity {
                 String enterPIN = getEditTextData(firstDigitpinEdt)+getEditTextData(secondDigitpinEdt)+
                         getEditTextData(thirdDigitpinEdt)+getEditTextData(fourthDigitpinEdt);
 
-                if(enterPIN.length()==4){
-                    SharedPreferences sharedPreferences = getSharedPreferences(getPackageName()+".my_pref_file", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("pin",enterPIN);
-                    editor.apply();
-                    Intent intent = new Intent(OTPActivity.this,temp.class);
+                SharedPreferences sharedPreferences = getSharedPreferences(getPackageName()+".my_pref_file", Context.MODE_PRIVATE);
+                String pin = sharedPreferences.getString("pin","N/A");
+
+                if(enterPIN.length()==4 && pin.equals("N/A")) {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("pin",enterPIN);
+                        editor.apply();
+                        Intent intent = new Intent(PINActivity.this,DSRActivity.class);
+                        startActivity(intent);
+                }else if(enterPIN.length()==4 && enterPIN.equals(pin)){
+                    Intent intent = new Intent(PINActivity.this,DSRActivity.class);
                     startActivity(intent);
-
+                }else
+                    Toast.makeText(PINActivity.this,"Please Enter complete pin",Toast.LENGTH_SHORT).show();
                 }
-                else{
-                    Toast.makeText(OTPActivity.this,"Enter complete pin",Toast.LENGTH_SHORT).show();
-
-                }
-
-
-            }
-        });
+            });
 
         fourthDigitpinEdt.setOnKeyListener(new View.OnKeyListener() {
             @Override
